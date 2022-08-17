@@ -195,11 +195,13 @@ export function PromptEditor() {
                                     value: 1,
                                     label: '1',
                                 }, {
-                                    value: 512,
-                                    label: '512',
+                                    // value: 512,
+                                    // label: '512',
+                                    value: 812,
+                                    label: '812',
                                 }]}
                                 min={1}
-                                max={512}
+                                max={812}
                             />
 
                             <Tooltip title="On which symbols GPT-3 should stop generating text. Enter \n for a line break." placement="left">

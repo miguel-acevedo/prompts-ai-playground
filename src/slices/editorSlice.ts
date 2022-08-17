@@ -646,10 +646,14 @@ const fetchBasicOutputAsync = (): AppThunk => (dispatch, getState) => {
     dispatch(setBasicLoading(true));
     GptAPI.generateCompletions(completionParams.prompt, completionParams).then(response => {
         console.log(response.data);
-        return { ...response.data };
+        //return { ...response.data };
+        return response.data
     }).then(response => {
-        const choiceResult = response.choices[0] as ChoiceResult;
-        dispatch(loadBasicOutput(choiceResult.text));
+        // const choiceResult = response.choices[0] as ChoiceResult;
+        console.log(response)
+        const choiceResult = response as ChoiceResult;
+        //dispatch(loadBasicOutput(choiceResult.text));
+        dispatch(loadBasicOutput(response));
     }).catch(error => {
         alert('API returned an error. Refer to the console to inspect it.')
         console.log(error.response);

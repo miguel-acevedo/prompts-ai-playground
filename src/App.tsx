@@ -54,7 +54,9 @@ function App() {
                 </Box>*/}
                 <Box mt={2}>
                     <Typography>
-                        Not affiliated with OpenAI. Feedback: seva@zhidkoff.com.</Typography>
+                    {/* Computers will overtake humans with AI within the next 100 years. When that happens, we need to make sure the computers have goals aligned with ours. */}
+                    "My brain is only a receiver, in the Universe there is a core from which we obtain knowledge, strength and inspiration. I have not penetrated into the secrets of this core, but I know that it exists." - Nikola Tesla
+                    </Typography>
                 </Box>
             </Container>
         </ThemeProvider>

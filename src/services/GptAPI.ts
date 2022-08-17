@@ -11,24 +11,44 @@ export interface ChoiceResult {
 class GptAPI {
     static generateCompletions(prompt: string | Array<string>, completionParams: CompletionParameters,
                                n: number = 1): AxiosPromise {
+        // return axios({
+        //     method: "POST",
+        //     url: `https://api.openai.com/v1/engines/${completionParams.engine}/completions`,
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Authorization": `Bearer ${completionParams.apiKey}`,
+        //     },
+        //     data: {
+        //         "prompt": prompt,
+        //         "n": n,
+        //         "max_tokens": completionParams.maxTokens,
+        //         "temperature": completionParams.temperature,
+        //         "stop": completionParams.stop,
+        //         "top_p": completionParams.topP,
+        //         "presence_penalty": completionParams.presencePenalty,
+        //         "frequency_penalty": completionParams.frequencyPenalty
+        //     }
+        // });
+
         return axios({
             method: "POST",
-            url: `https://api.openai.com/v1/engines/${completionParams.engine}/completions`,
+            url: `https://5468-2601-646-100-f440-416e-53b8-5002-d900.ngrok.io`,
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${completionParams.apiKey}`,
+                // "Authorization": `Bearer ${completionParams.apiKey}`,
             },
             data: {
                 "prompt": prompt,
-                "n": n,
-                "max_tokens": completionParams.maxTokens,
-                "temperature": completionParams.temperature,
-                "stop": completionParams.stop,
-                "top_p": completionParams.topP,
-                "presence_penalty": completionParams.presencePenalty,
-                "frequency_penalty": completionParams.frequencyPenalty
+                // "n": n,
+                "length": completionParams.maxTokens,
+                "temp": completionParams.temperature,
+                // "stop": completionParams.stop,
+                // "top_p": completionParams.topP,
+                // "presence_penalty": completionParams.presencePenalty,
+                // "frequency_penalty": completionParams.frequencyPenalty
             }
         });
+
     }
 }
 
